@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import { Card } from './components/Card';
+import pickCards from './utils/pickCards';
+
+let cards = pickCards(12);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="DeckTable">
+          {cards.map((card, index) => (<Card id={index} card={card.card} value={card.value}/>))}
+      </section>
     </div>
   );
 }

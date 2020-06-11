@@ -1,0 +1,35 @@
+.FlipCard {
+  background-color: transparent;
+  width: 107px;
+  height: 150px;
+  perspective: 1000px;
+}
+
+.FlipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.FlipCardFront, .FlipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.FlipCardBack {
+  background-color: #bbbbbb;
+  color: #000000;
+}
+
+.FlipCardFront {
+  background-color: white;
+  color: white;
+  transform: rotateY(180deg);
+}
